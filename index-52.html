@@ -436,7 +436,7 @@ if(pf){
    progress.textContent='جارٍ ضغط الصور...';
    const compressed=[];
    for(const file of files){if(!file.type.startsWith('image/')) throw new Error('الملف المحدد ليس صورة');compressed.push(await compressImage(file));}
-   progress.textContent='جارٍ .رفع الصور...';
+   progress.textContent='جارٍ رفع الصور...';
    const images=await preparePropertyImages(compressed,progress);
    if(!images.length) throw new Error('لم يتم تجهيز أي صورة');
    const property={_cloudId:(Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,10)),kind:String(d.get('kind')||'بيع'),title:String(d.get('title')||'').trim(),description:String(d.get('description')||'').trim(),price:String(d.get('price')||'').trim(),phone:String(d.get('phone')||'').trim(),images,image:images[0]};
